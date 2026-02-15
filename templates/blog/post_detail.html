@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="post-detail">
+
+    {% if post.featured_image %}
+        <img src="{{ post.featured_image.url }}" class="post-detail-image">
+    {% endif %}
+
+    <h1>{{ post.title }}</h1>
+
+    <p>
+        By {{ post.author.username }}
+        • {{ post.created_at|date:"M d, Y" }}
+    </p>
+
+    <hr>
+
+    <div class="post-content">
+        {{ post.content|linebreaks }}
+    </div>
+
+</div>
+
+{% endblock %}

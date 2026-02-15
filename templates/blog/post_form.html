@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ action }} Post{% endblock %}
+
+{% block content %}
+<div class="form-container">
+  <h2 style="margin-bottom: 20px;">{{ action }} Post</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="alert alert-error">
+        {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+
+    <div class="form-group">
+      {{ form.title.label_tag }}
+      {{ form.title }}
+      {{ form.title.errors }}
+    </div>
+
+    <div class="form-group">
+      {{ form.category.label_tag }}
+      {{ form.category }}
+      {{ form.category.errors }}
+    </div>
+
+    <div class="form-group">
+      {{ form.content.label_tag }}
+      {{ form.content }}
+      {{ form.content.errors }}
+    </div>
+
+    <div class="form-group">
+      {{ form.excerpt.label_tag }}
+      {{ form.excerpt }}
+      {{ form.excerpt.errors }}
+      <small style="color:#808080;">Optional: leave blank to auto-generate excerpt.</small>
+    </div>
+
+    <div class="form-group">
+      {{ form.featured_image.label_tag }}
+      {{ form.featured_image }}
+      {{ form.featured_image.errors }}
+    </div>
+
+    <div class="form-group">
+      {{ form.status.label_tag }}
+      {{ form.status }}
+      {{ form.status.errors }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">{{ action }}</button>
+    <a href="{% url 'blog:home' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}

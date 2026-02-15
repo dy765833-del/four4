@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="form-container">
+  <h2 style="margin-bottom: 20px;">Login</h2>
+
+  <form method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+      {{ form.username.label_tag }}
+      {{ form.username }}
+    </div>
+
+    <div class="form-group">
+      {{ form.password.label_tag }}
+      {{ form.password }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+
+  <p style="margin-top: 20px; color: #808080;">
+    No account? <a href="{% url 'accounts:register' %}" style="color:#E50914;">Register</a>
+  </p>
+</div>
+{% endblock %}
