@@ -1,9 +1,10 @@
 django-netflix-blog
 
 Members;
-  Romma A. Perez - C-23-11310
-  Faithe Angeline R. Pastor -  C-23-11448
-  Jhossalene P. Garcia - C-23-11484
+  Angel Faith Dela Virgo - C-23-11541
+  Jenica Mae Capili -  C-23-11689
+  Erica Dela Cruz - C-23-11540
+  Karen Joy Cabuang - C-23-11442 
 
 
     GROUP WEBSITE LINK
